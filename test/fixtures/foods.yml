@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+potatoes:
+  name: Potatoes
+  description: null
+  amount: 1
+
+cereal:
+  name: Cereal
+  description: froot loops
+  amount: 5.5
