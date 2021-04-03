@@ -1,0 +1,17 @@
+name: Static Analysis
+
+on: [push]
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.5
+      - name: Install Rubocop
+        run: gem install rubocop
+      - name: Run Rubocop
+        run: rubocop -c rubocop.yml
