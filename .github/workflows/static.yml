@@ -15,3 +15,18 @@ jobs:
         run: gem install rubocop
       - name: Run Rubocop
         run: rubocop -c rubocop.yml
+
+  gemsurance:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.5
+      - name: Install Gems
+        run: gem install gemsurance bundler
+      - name: Run Bundle Install
+        run: bundle install
+      - name: Run Gemsurance
+        run: bundle exec gemsurance
